@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SquareRepos</string>
+    <string name="square_repos">Square`s repositories</string>
+    <string name="retry">Retry</string>
+    <string name="loading_error_text">An error was occurred while trying to fetch repositories.</string>
+</resources>
