@@ -61,7 +61,7 @@ class ApplicationModule {
 
     @Provides
     @Singleton
-    fun provideBooksApi(
+    fun provideReposApi(
         retrofit: Retrofit
     ): ReposApi {
         return retrofit.create(ReposApi::class.java)
@@ -69,7 +69,7 @@ class ApplicationModule {
 
     @Provides
     @Named(REPOS_REMOTE_DATA_SOURCE)
-    fun provideBooksRemoteDataSource(
+    fun provideReposRemoteDataSource(
         reposApi: ReposApi
     ): ReposDataSource {
         return ReposRemoteDataSource(reposApi)
@@ -77,7 +77,7 @@ class ApplicationModule {
 
     @Provides
     @Named(REPOS_LOCAL_DATA_SOURCE)
-    fun provideBooksLocalDataSource(
+    fun provideReposLocalDataSource(
 
     ): ReposDataSource {
         return ReposLocalDataSource()
@@ -85,14 +85,14 @@ class ApplicationModule {
 
     @Provides
     @Singleton
-    fun provideBooksRepository(
+    fun provideReposRepository(
         @Named(REPOS_REMOTE_DATA_SOURCE) remoteDataSource: ReposDataSource,
         @Named(REPOS_LOCAL_DATA_SOURCE) localDataSource: ReposDataSource
     ): ReposRepository {
         return ReposRepository(remoteDataSource, localDataSource)
     }
 
-    companion object {
+    public companion object {
 
         const val BASE_URL = BuildConfig.BASE_URL
         const val REPOS_REMOTE_DATA_SOURCE = "reposRemoteDataSource"

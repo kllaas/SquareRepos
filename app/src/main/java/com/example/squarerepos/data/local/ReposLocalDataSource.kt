@@ -6,7 +6,7 @@ import io.reactivex.Observable
 import javax.inject.Inject
 import javax.inject.Named
 
-@Named("booksLocalDataSource")
+@Named("reposLocalDataSource")
 class ReposLocalDataSource @Inject constructor(
 
 ) : ReposDataSource {

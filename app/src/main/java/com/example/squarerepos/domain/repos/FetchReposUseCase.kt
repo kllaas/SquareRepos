@@ -7,7 +7,7 @@ import com.example.squarerepos.utils.ext.applySchedulers
 import javax.inject.Inject
 
 class FetchReposUseCase @Inject constructor(
-    private val booksRepository: ReposRepository,
+    private val reposRepository: ReposRepository,
     private val repositoryToViewMapper: RepositoryToViewMapper
 ) : UseCase<Any?, FetchReposResult>() {
 
@@ -15,7 +15,7 @@ class FetchReposUseCase @Inject constructor(
         params: Any?,
         onExecuted: (UseCaseResult<FetchReposResult>) -> Unit
     ) {
-        booksRepository.getRepos()
+        reposRepository.getRepos()
             .map {repositoryToViewMapper.map(it)}
             .applySchedulers()
             .subscribe(

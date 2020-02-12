@@ -8,7 +8,7 @@ import com.example.squarerepos.R
 import com.example.squarerepos.domain.repos.RepositoryView
 
 
-class ReposAdapter : ListAdapter<RepositoryView, RepositoryHolder>(BookDiff) {
+class ReposAdapter : ListAdapter<RepositoryView, RepositoryHolder>(RepositoryDiff) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoryHolder {
         return RepositoryHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_repo, parent, false))
@@ -20,7 +20,7 @@ class ReposAdapter : ListAdapter<RepositoryView, RepositoryHolder>(BookDiff) {
 
 }
 
-object BookDiff : DiffUtil.ItemCallback<RepositoryView>() {
+object RepositoryDiff : DiffUtil.ItemCallback<RepositoryView>() {
 
     override fun areItemsTheSame(oldItem: RepositoryView, newItem: RepositoryView): Boolean {
         return oldItem.id == newItem.id

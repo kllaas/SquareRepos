@@ -32,7 +32,7 @@ class ReposRepositoryTest {
     }
 
     @Test
-    fun `Given bad internet connection, when getBooks, should return list of books from localDataSource`() {
+    fun `Given bad internet connection, when getRepos, should return list of repos from localDataSource`() {
 
     }
 
