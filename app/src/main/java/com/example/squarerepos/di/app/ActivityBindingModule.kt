@@ -20,11 +20,7 @@ abstract class ActivityBindingModule {
     internal abstract fun reposFragment(): ReposFragment
 
     @PerActivity
-    @ContributesAndroidInjector(
-        modules = [
-            ReposModule::class
-        ]
-    )
+    @ContributesAndroidInjector
     internal abstract fun reposActivity(): MainActivity
 
 }
